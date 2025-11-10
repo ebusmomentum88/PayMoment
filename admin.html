@@ -3,29 +3,26 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Admin Dashboard - Ebus News</title>
+  <title>Admin Panel | PayMoment</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- ===== Navbar ===== -->
   <nav class="navbar">
     <div class="nav-container">
-      <span class="logo">Admin Panel</span>
+      <div class="logo">Admin Dashboard</div>
       <div class="nav-links">
-        <button id="logoutBtn">Logout</button>
+        <a href="index.html">View Site</a>
       </div>
     </div>
   </nav>
 
-  <!-- ===== Admin Dashboard ===== -->
   <section class="dashboard-container">
-    <h2>Manage News Content</h2>
-    <div id="admin-news-list" class="news-section"></div>
-
-    <button id="addNewsBtn" class="btn-primary" style="margin-top: 20px;">Add News</button>
+    <h2 class="section-title">Manage News</h2>
+    <button id="addNewsBtn" class="btn-primary" style="margin-left:40px;">+ Add News</button>
+    <div id="admin-news-list"></div>
   </section>
 
-  <!-- ===== Add/Edit Modal ===== -->
+  <!-- Modal -->
   <div class="modal" id="newsModal">
     <div class="modal-content">
       <div class="modal-header">
@@ -33,24 +30,33 @@
         <button class="close-btn" id="closeModal">&times;</button>
       </div>
       <form id="newsForm">
-        <input type="hidden" id="editIndex">
         <div class="form-group">
           <label for="newsTitle">Title</label>
           <input type="text" id="newsTitle" required>
         </div>
+
         <div class="form-group">
-          <label for="newsImage">Image URL</label>
-          <input type="text" id="newsImage" required>
+          <label for="newsImage">Upload Image</label>
+          <input type="file" id="newsImage" accept="image/*">
+          <img id="previewImage" style="margin-top:10px;max-width:100%;border-radius:8px;display:none;">
         </div>
+
         <div class="form-group">
           <label for="newsContent">Content</label>
-          <input type="text" id="newsContent" required>
+          <textarea id="newsContent" rows="4" required></textarea>
         </div>
+
         <button type="submit" class="btn-primary">Save</button>
       </form>
     </div>
   </div>
 
-  <script src="admin.js"></script>
+  <footer class="footer">
+    &copy; 2025 PayMoment | Admin Portal.
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
+
+
